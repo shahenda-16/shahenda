@@ -1,0 +1,186 @@
+/* الخطوط والتنسيق العام */
+body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* تصميم القائمة */
+.menu {
+    background: linear-gradient(to right, #005c97, #363795);
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu ul li {
+    margin: 0 15px;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.menu ul li a:hover {
+    color: #f39c12;
+}
+
+/* تصميم الإطارات */
+.frame {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 90%;
+    width: 800px;
+}
+
+/* التصميم الرئيسي */
+.main {
+    text-align: center;
+}
+
+.main h1 {
+    font-size: 28px;
+    color: #2c3e50;
+}
+
+.main p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* التصميم للتاريخ والمعرض */
+h2 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* تصميم الصور */
+.photos {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* التذييل */
+.footer {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.footer ul li {
+    margin: 5px 0;
+}
+
+.footer ul li a {
+    color: #f39c12;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #fff;
+}
+/* شكل الطائرة */
+#plane {
+    position: fixed;
+    top: 80%;
+    right: -200px;
+    width: 100px;
+    z-index: 1000;
+    transition: transform 1s ease;
+}
+
+/* حركة طيران عند التمرير */
+body.scrolled #plane {
+    animation: flyAcross 5s linear forwards;
+}
+
+@keyframes flyAcross {
+    0% { right: -200px; transform: rotate(0deg); }
+    100% { right: 110%; transform: rotate(10deg); }
+}
+
+/* عرض صور متحرك */
+.gallery img {
+    display: none;
+    max-width: 100%;
+    transition: opacity 1s ease-in-out;
+}
+
+.gallery img.active {
+    display: block;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+.fly-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: crimson;
+    padding: 20px 30px;
+    font-size: 24px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00000050;
+    z-index: 9999;
+    animation: fadeOut 2s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(1.2); }
+}
